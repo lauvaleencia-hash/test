@@ -14,6 +14,12 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(juce)
 
 juce_add_plugin(FRACTURE_BLOOM
+  target_link_libraries(FRACTURE_BLOOM
+    PRIVATE
+        juce::juce_audio_utils
+        juce::juce_dsp
+        juce::juce_audio_processors
+)
   COMPANY_NAME "Bloom Audio Labs"
   BUNDLE_ID com.bloomaudiolabs.fracturebloom
   PLUGIN_MANUFACTURER_CODE BmAL
